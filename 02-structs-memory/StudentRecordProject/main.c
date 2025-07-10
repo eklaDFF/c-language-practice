@@ -21,6 +21,10 @@ int main(void)
 			case 3:
 				search_student(head);
 				break;
+			case 4:
+				delete_student(&head);
+				break;
+				
 			default:
 				printf("Currently this option not available!\n");
 		}

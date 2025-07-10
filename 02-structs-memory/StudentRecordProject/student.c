@@ -75,4 +75,33 @@ void search_student(struct Student *head)
 		default:
 			printf("\nNot a valid input!\n");
 	}
-}		
+}
+
+void delete_student(struct Student **head)
+{
+	int id;
+	printf("\nEnter ID : ");
+	scanf("%d", &id);
+
+	struct Student *curr = *head;
+	struct Student *prev = NULL;
+
+	while(curr != NULL && curr->id != id){
+		prev = curr;
+		curr = curr->next;
+	}
+
+	if(curr == NULL){
+		printf("\nRecord Not Found\n");
+		return;
+	}
+
+	if(prev == NULL){
+		*head = curr->next;
+	}else{
+		prev->next = curr->next;
+	}
+
+	free(curr);
+	printf("\nStudent with ID %d DELETED\n", id);
+}
