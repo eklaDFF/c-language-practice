@@ -4,8 +4,9 @@
 int main(void)
 {
 	struct Student *head = NULL;
+	int flag = 1;
 	int option;
-	while(1){
+	while(flag){
 		printf("\n-----Student Records System-----\n");
 		printf("1. Add Record\n2. Vew All\n3. Search\n4. Delete\n5. Exit\n");
 		printf("Now Enter What do you want : ");
@@ -24,6 +25,11 @@ int main(void)
 			case 4:
 				delete_student(&head);
 				break;
+			case 5:
+				free_all(head);
+				flag = 0;
+				break;
+				
 				
 			default:
 				printf("Currently this option not available!\n");

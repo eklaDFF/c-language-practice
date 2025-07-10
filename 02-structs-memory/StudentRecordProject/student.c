@@ -105,3 +105,13 @@ void delete_student(struct Student **head)
 	free(curr);
 	printf("\nStudent with ID %d DELETED\n", id);
 }
+
+void free_all(struct Student *head)
+{
+	struct Student *temp;
+	while(head != NULL){
+		temp = head;
+		head = head->next;
+		free(temp);
+	}
+}
