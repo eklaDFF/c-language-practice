@@ -10,5 +10,8 @@ int main(void)
 	insert(&root, 5);
 	insert(&root, 3);
 	traverse(root);
+	printf("\n");
+	traverse(delete(root, 4));
+	
 }
 

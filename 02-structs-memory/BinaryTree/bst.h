@@ -9,5 +9,6 @@ struct BSTNode{
 
 void insert(struct BSTNode **root, int newValue);
 void traverse(struct BSTNode *root);
+struct BSTNode *delete(struct BSTNode *root, int value);
 
 #endif
